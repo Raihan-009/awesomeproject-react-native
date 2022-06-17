@@ -1,9 +1,12 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TextInput, Button, Alert } from "react-native";
 
 export default function Home(){
 
     const [text, setText] = useState('Hello World!')
+
+    const navigation = useNavigation()
 
     return(
         <View style = {styles.container}>
@@ -18,9 +21,10 @@ export default function Home(){
             />
             <Text style = {styles.text2}> Demo Output : {text}</Text>
             <Button
-                title="Learn More"
+                onPress={() => navigation.navigate('Image Screen')}
+                title="Click Here"
                 color="#841584"
-                accessibilityLabel="Learn more about this purple button"
+                // accessibilityLabel="Learn more about this purple button"
             />
         </View>
     )
