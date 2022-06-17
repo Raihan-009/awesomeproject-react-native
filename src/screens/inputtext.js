@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, TextInput } from "react-native";
+import { Text, View, StyleSheet, TextInput, Button, Alert } from "react-native";
 
-
-export default function App(){
+export default function Home(){
 
     const [text, setText] = useState('Hello World!')
 
@@ -18,6 +17,11 @@ export default function App(){
             onChangeText = {(val) => setText(val)}
             />
             <Text style = {styles.text2}> Demo Output : {text}</Text>
+            <Button
+                title="Learn More"
+                color="#841584"
+                accessibilityLabel="Learn more about this purple button"
+            />
         </View>
     )
 }
@@ -37,6 +41,7 @@ const styles = StyleSheet.create({
     text2 : {
         color : '#078f29',
         fontSize : 20,
+        marginBottom : 10
     },
     input :{
         borderWidth : 1,
